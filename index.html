@@ -197,6 +197,78 @@
             color: var(--primary-blue);
             font-size: 1.2em;
             text-align: center;
+            /* --- Key Personnel Section Styles --- */
+#personnel {
+    background-color: var(--white);
+    padding: 80px 0; /* Add padding to match other sections */
+}
+
+.personnel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.personnel-card {
+    padding: 30px 20px;
+    border: 1px solid var(--light-blue);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.personnel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 86, 179, 0.1);
+}
+
+.profile-pic-container { /* Renamed for clarity */
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    background-color: var(--light-blue);
+    border-radius: 50%;
+    border: 4px solid var(--primary-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.profile-pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.personnel-card h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+.personnel-card .role {
+    font-weight: 600;
+    color: var(--grey-text);
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.personnel-card .description {
+    color: var(--dark-text);
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* Add responsive adjustment for mobile */
+@media (max-width: 768px) {
+    /* ... existing media queries ... */
+    .personnel-grid {
+        grid-template-columns: 1fr;
+    }
+}
         }
 
         /* --- Services Section --- */
@@ -389,7 +461,52 @@
         </div>
     </section>
 
-    <section id="about" class="light-bg">
+    <section id="about" class="light-bg"><section id="personnel">
+        <div class="container">
+            <h2 class="section-heading">Meet Our Key Personnel</h2>
+            <div class="personnel-grid">
+                
+                <div class="personnel-card">
+                    <div class="profile-pic-container">
+                        <img src="images/shiva_profile.jpg" alt="Profile of Mr. [Manoj kumar Sa]" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                        </div>
+                    <h3>Mr. [Key Person Name]</h3>
+                    <p class="role">Chief Pharmacist & Founder</p>
+                    <p class="description">
+                        With over 30 years of experience, Mr. [Manoj kumar Sa] leads our team with a dedication to community health and ethical practice. He founded the store in 1995.
+                    </p>
+                </div>
+                
+                <div class="personnel-card">
+                    <div class="profile-pic-container">
+                        <img src="images/assistant_profile.png" alt="Profile of Mrs. [Name]" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                        </div>
+                    <h3>Mrs. [Key Person Name]</h3>
+                    <p class="role">Senior Pharmacy Assistant</p>
+                    <p class="description">
+                        Mrs. [Name] is known for her warm approach and expertise in managing patient records and ensuring accurate medicine dispensing.
+                    </p>
+                </div>
+
+                </div>
+        </div>
+    </section>
+    
+    ```
+
+### Step 4: Update the Navigation Link
+
+Add a link to the new section in your navigation menu, inside the `<nav class="nav-links">` block:
+
+```html
+<nav class="nav-links" id="navLinks">
+    <a href="#hero">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#personnel">Personnel</a> <a href="#services">Services</a>
+    <a href="#contact">Contact Us</a>
+</nav>
+
+        
         <div class="container">
             <h2 class="section-heading">About Our Dedication</h2>
             <div class="about-content">
